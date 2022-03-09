@@ -23,16 +23,12 @@ if (yargs.argv.format === true) {
       .tz(targetTimezone)
       .format('dddd, MMMM Do YYYY, h:mm:ss a')}`
   );
-  console.log(
-    `The time right now is at America/New_York timezone is ${moment().format(
-      form
-    )}`
-  );
+  console.log(`The time right now is ${moment().format(form)}`);
 } else {
   console.log(
     `The time at ${targetTimezone} timezone is ${moment()
       .tz(targetTimezone)
       .format()}`
   );
-  console.log(`The time at America/New_York timezone is ${moment().format()}`);
+  console.log(`The time right now is ${moment().format()}`);
 }
