@@ -8,13 +8,17 @@ const form = 'dddd, MMMM Do YYYY, h: mm:ss a';
 
 const yargs = require('yargs');
 
-let targetTimezone;
+const targetTimezone = yargs.argv._[0];
 
-if (yargs.argv.length !== [3]) {
-  console.log('Usage: node <script-file> <timezone>');
-  process.exit[1];
-} else {
-  targetTimezone = yargs.argv._[0];
+if (yargs.argv.all === true) {
+  console.table(moment.tz.names());
+} else if (yargs.argv.country) {
+  console.table(moment.tz.zonesForCountry(yargs.argv.country));
+}
+
+if (targetTimezone) {
+  console.log('Usage: node <script-file><timezone>');
+  process.exit(1);
 }
 
 if (yargs.argv.format === true) {
