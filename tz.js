@@ -1,5 +1,3 @@
-/* eslint-disable prefer-destructuring */
-/* eslint-disable no-unused-expressions */
 const moment = require('moment-timezone');
 
 moment.tz.setDefault('America/New_York');
